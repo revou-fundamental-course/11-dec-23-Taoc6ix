@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit Info</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!--Navbar-->
+<body>
+    <nav>
+        <img src="" alt="logo" class="logo">
+        <ul class="nav-items">
+            <li>Home</li>
+            <li>Our Profile</li>
+            <li>Message Us</li>
+        </ul>
+    </nav>
+<!--End Navbar-->
+
+    <hr>
+<!--Header-->
+    <header>
+        <h1>Hi, Welcome to our Website</h1>
+        <h4>Please Enjoy</h4>
+        <img src="assets/header.png">
+        <hr>
+    </header>
+<!--Header End-->
+
+<h2>Our Information</h2>
+    <div class="facilitation">
+        <div>
+            <div class="circle" style="background-image: url('assets/F1-Logo.png');"></div>
+            <h4>F1 Circuit</h4>
+        </div>
+        <div>
+            <div class="circle" style="background-image: url('assets/MotoGP\ Logo.png');"></div>
+            <h4>MotoGP Circuit</h4>
+        </div>
+        <div>
+            <div class="circle"></div>
+            <h4>WRC Circuit</h4>
+        </div>
+    </div>
+    <hr>
+    <div class="contact-form">
+        <h1>Message Us</h1>
+        <form name="message-us">
+              <label for="name">Nama :</label>
+              <input id="name" type="text" placeholder="Name" required>
+              <br>
+              <label for="birth">Date of Birth:</label>
+              <input id="birth" type="date" required>
+              <br>
+              <label class="label-gender">Jenis Kelamin :</label>
+              <div class="gender-options">
+                    <input id="women" type="radio" name="gender" value="women">
+                    <label for="women">Women</label>
+                    <input id="men" type="radio" name="gender" value="men">
+                    <label for="men">Men</label>
+              </div>
+              <br>
+              <div class="message">
+                  <label for="message">Pesan :</label>
+                  <textarea></textarea>
+              </div>
+              <br>
+              <button id="submit" type="submit">Submit</button>
+              <p id="error"></p>
+        </form>
+        <div id="senderInfo" style="display: none;">
+              <p>
+                    <span id="senderName"></span><br>
+                    <span id="senderBirth"></span><br>
+                    <span id="senderGender"></span><br>
+                    <span id="senderMessage"></span><br>
+              </p>
+        </div>
+</body>
+</html>
