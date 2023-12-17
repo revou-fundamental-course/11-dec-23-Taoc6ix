@@ -40,43 +40,38 @@
             <h4>MotoGP Circuit</h4>
         </div>
         <div>
-            <div class="circle"></div>
+            <div class="circle" style="background-image: url('assets/wrc-logo.png');"></div>
             <h4>WRC Circuit</h4>
         </div>
     </div>
     <hr>
-    <div class="contact-form">
-        <h1>Message Us</h1>
-        <form name="message-us">
-              <label for="name">Nama :</label>
-              <input id="name" type="text" placeholder="Name" required>
-              <br>
-              <label for="birth">Date of Birth:</label>
-              <input id="birth" type="date" required>
-              <br>
-              <label class="label-gender">Jenis Kelamin :</label>
-              <div class="gender-options">
-                    <input id="women" type="radio" name="gender" value="women">
-                    <label for="women">Women</label>
-                    <input id="men" type="radio" name="gender" value="men">
-                    <label for="men">Men</label>
-              </div>
-              <br>
-              <div class="message">
-                  <label for="message">Pesan :</label>
-                  <textarea></textarea>
-              </div>
-              <br>
-              <button id="submit" type="submit">Submit</button>
-              <p id="error"></p>
-        </form>
-        <div id="senderInfo" style="display: none;">
-              <p>
-                    <span id="senderName"></span><br>
-                    <span id="senderBirth"></span><br>
-                    <span id="senderGender"></span><br>
-                    <span id="senderMessage"></span><br>
-              </p>
-        </div>
+<form id="message" method="post">
+    <h2>Message Us</h2>
+    <table>
+        <tr>
+            <td>Nama</td>
+            <td>: <input type="text"></td>
+        </tr>
+        <tr>
+            <td>Tanggal</td>
+            <td>: <input type="date"></td>
+        </tr>
+        <tr>
+            <td>Jenis Kelamin</td>
+            <td>: <input type="radio" name="jk"> Laki-laki 
+                <input type="radio" name="jk"> Perempuan
+            </td>
+        </tr>
+        <tr>
+            <td>Alamat</td>
+            <td>: <textarea></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="simpan">
+            </td>
+        </tr>
+</form>
 </body>
 </html>
