@@ -1,3 +1,13 @@
+function setName() {
+    const name = localStorage.getItem("savedName");
+    if (!name) {
+      name = prompt("Please enter your name", "");
+      localStorage.setItem("savedName", name);
+    }
+    document.getElementById("halo-nama").innerHTML = name;
+  }
+  
+
 function validateForm(){
   const nama  = document.forms['form']['nama'].value;
   const tanggal = document.forms['form']['tanggal'].value;
