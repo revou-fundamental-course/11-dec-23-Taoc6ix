@@ -3,145 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuit Info</title>
     <link rel="stylesheet" href="css/style.css">
+    <title>My Profile Web</title>
 </head>
-
-<!--Navbar-->
 <body>
-    <nav>
-        <img src="assets/logo.png" alt="logo" class="logo">
-        <ul class="nav-items">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#facilitation">Information</a></li>    
-            <li><a href="#message">Message Us</a></li>
-        </ul>
-    </nav>
-<!--End Navbar-->
-    <hr>
-<!--Header-->
-    <header>
-        <div id="home">
-            <h1>Hi <span id="setName"></span>, Welcome to Williams website</h1>
-            <h4>Please Enjoy</h4>
-            <img src="assets/header.png">
-        </div>
-        <hr>
-    </header>
-<!--End Header-->
+  <header class="header-wrapper" id="top">
+    <img class="logo" src="assets/logo.png" alt="logo">
+    <div class="menu">
+        <a href="#top"><button class="button"><b>Home</b></button></a>
+        <a href="#myprofile"><button class="button">Profile</button></a>
+        <a href="#form-section"><button class="button">Message</button></a>
+    </div>
+</header>
 
-<div class="profile">
-    <div id="profile">
-        <h1>Profile</h1>
-        <p>The Williams Formula 1 team is a sporting icon - an expression often used without substance, but Williams has forged a reputation of success through sheer determination and grit intertwined with innovation, passionate and skilful race-craft and an absolute desire to win.</p>
-        <p>Their support allows us to go racing and by working collaboratively with each, we have the greatest chance of success both on and off the racetrack.</p>
-</div>
 <hr>
-<!--Information Section-->
-<h2>Our Information</h2>
-    <div class="facilitation">
-        <div id="facilitation">
-            <div class="circle" style="background-image: url('assets/F1-Logo.png');"></div>
-            <h4>F1 Circuit</h4>
-        </div>
-        <div>
-            <div class="circle" style="background-image: url('assets/MotoGP\ Logo.png');"></div>
-            <h4>MotoGP Circuit</h4>
-        </div>
-        <div>
-            <div class="circle" style="background-image: url('assets/wrc-logo.png');"></div>
-            <h4>WRC Circuit</h4>
-        </div>
-    </div>
-<!--End Infomation-->
+
+<section class="head">
+  <h1>Hi <span id="targetWord"></span>, Welcome to my Website</h1>
+    <p>especially for those of you who like the F1 Williams Racing Team</p>
+      <div id="image-slider">
+        <img src="assets/1.png" class="sliding-image" style="display: block" />
+        <img src="assets/2.png" class="sliding-image" style="display: none" />
+        <img src="assets/3.png" class="sliding-image" style="display: none" />
+      </div>
+</section>
+
+<main class="main-grid">
+  <article class="firstrow" id="myprofile">
+    <h1>My Profile</h1>
+      <img class="me" src="assets/P.jpg" alt="me">
+        <p>Hello, My name is Muhammad Rafli Octavian</p>
+        <p>I am a big fan of the Williams Racing Team :p</p>
+        <p>More Information Go to My Social Media ></p>
+        <p>Instagram : taoc.6ix</p>
+        <p>linkedIn : Muhammad Rafli Octavian</p>
+        <p>Github : Taoc6ix</p>
+  </article>
+  </main>
     <hr>
-    
-<!--Form Section-->
-    <section id="message">
-        <div>
-            <div class="Massage" >
-                <h2>Send Massage</h2>
-            </div>
 
-        <div class="pesan">
-            <div class="kotakF">
-                <form name="form" >
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="nama">Nama </label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="nama" name="nama" placeholder="Masukan Nama">
-                            <p id="errorNama"></p>
-                        </div>
-                    </div>
+<section class="form-section">
+    <form id="form-section" name="form-section" onsubmit="return validateForm()">
+        <h2><i>Message Us!</i></h2>
+            <label for="name">Name : <input id="name" name="name" type="text" placeholder="Masukkan Nama Anda" required></input></label>
+            <label for="dob">Date of Birth : <input id="dob" name="dob" type="date" required></label>
+            <label for="gender">Jenis Kelamin : <input id="male" type="radio" name="gender" class="inline" value="Male" checked>Laki-laki</input>
+            <input id="female" type="radio" name="gender" class="inline" value="Female">Perempuan</input></label>
+            <label for="message">Message : <textarea id="message" name="message" rows="3" cols="30" placeholder="Masukkan Pesan Anda" required></textarea>
+            <input type="submit" id="submit" value="Submit">
+    </form>
+</section>
 
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="tanggal">Tanggal Lahir </label>
-                        </div>
-                        <div class="col-75">
-        
-                            <input type="date" id="tanggal" name="tanggal">
-                            <p id="errorTanggal"></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="tanggal">jenis Kelamin </label>
-                        </div>
-                        <div class="col-75">
-                            <input type="radio" id="jk" name="jk" value="laki-laki">
-                            <label for="jk">Laki-Laki</label>
-                            <input type="radio" id="jk" name="jk" value="perempuan">
-                            <label for="jk">Perempuan</label>
-                            <p id="errorJk"></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="pesan">Pesan </label>
-                        </div>
-                        <div class="col-75">
-                            <textarea id="pesan" name="pesan" placeholder="Masukan pesan"></textarea>
-                            <p id="errorPesan"></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                       <button type="button" onclick="validateForm()">Kirim</button>
-                    </div>
-                    </div>
-                    <!--Menampikan Hasil Dari Form-->
-                    <div class="kotakP">
-                        <div class="judulP">
-                            <h3>Pesan Yang Di Kirimkan</h3>
-                        </div>
-                        <div class="isiP">
-                            <p style="margin-top: 75px;">Nama : <span id="namaData"></span></p>
-                            <p>Tanggal Lahir : <span id="tanggalData"></span></p>
-                            <p>Jenis Kelamin : <span id="jkData"></span></p>
-                            <p>Pesan : <span id="pesanData"></span ></p>
-                        </div>
-                    </div>
-                    <!--End-->
-                </div>
-            </div>
-    </section>
-<!--End Form-->
-
-<script src="js/script.js"></script>
-
-<!--footer-->
-<footer>
-    <div id="footer">
-        <h4 class="copyright">Copyright &copy; Taoc.6ix</h4>
-        <h5 class="social"><a href="https://github.com/taoc6ix" target="_blank"><img src="assets/github-icon.png"></a></h5>
+<section id="return">
+   <div class="returnText" id="returnText">
+      <p class="point">Current time: <span id="time-api"></span></p>
+      <p class="point">Name: <span id="sender-name"></span></p>
+      <p class="point">Date of Birth: <span id="sender-dob"></span></p>
+      <p class="point">Gender: <span id="sender-gender"></span></p>
+      <p class="point">Message: <span id="sender-message"></span></p>
     </div>
+</section>
+
+    <hr>
+
+<footer>
+  <div id="footer">
+    <p class="copyright">Copyright &copy; Taoc.6ix</p>
 </footer>
-<!--End Footer-->
+<!--JavaScript-->
+<script src="js/script.js"></script>
 </body>
+
 </html>
