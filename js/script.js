@@ -1,46 +1,49 @@
-function setName() {
-    const name = localStorage.getItem("savedName");
-    if (!name) {
-      name = prompt("Please enter your name", "");
-      localStorage.setItem("savedName", name);
-    }
-    document.getElementById("halo-nama").innerHTML = name;
+const targetWord = document.getElementById("targetWord");
+
+window.onload = function () {
+  const newWord = prompt("Masukkan Nama Anda?");
+  if (newWord) {
+    targetWord.textContent = newWord;
   }
-  
+};
 
-function validateForm(){
-  const nama  = document.forms['form']['nama'].value;
-  const tanggal = document.forms['form']['tanggal'].value;
-  const jk = document.forms['form']['jk'].value;
-  const pesan = document.forms['form']['pesan'].value;
-  
+let currentIndex = 0
+const images = document.querySelectorAll(".sliding-image")
+const totalImages = images.length
 
-  if(nama == ''){
-      document.getElementById('errorNama').innerHTML = "Nama tidak boleh kosong";
-  }
-  if(tanggal == ''){
-      document.getElementById('errorTanggal').innerHTML = "Tanggal tidak boleh kosong";
-  }if(jk == ''){
-      document.getElementById('errorJk').innerHTML = "Jenis kelamain tidak boleh kosong";
-  }if(pesan == ''){
-      document.getElementById('errorPesan').innerHTML = "Pesan tidak boleh kosong!"; 
-
-      return false;
-  }
-
- setData(nama, tanggal, jk, pesan);
+function changeImage() {
+  images[currentIndex].style.display = "none"
+  currentIndex = (currentIndex + 1) % totalImages
+  images[currentIndex].style.display = "block"
 }
 
-function setData(nama, tanggal, jk, pesan){
-  document.getElementById('namaData').innerHTML = nama;
-  document.getElementById('errorNama').innerHTML = "";
+setInterval(changeImage, 2000);
 
-  document.getElementById('tanggalData').innerHTML = tanggal;
-  document.getElementById('errorTanggal').innerHTML = "";
+const nameInput = document.getElementById("name")
+const submitButton = document.getElementById("submit")
+nameInput.addEventListener("input", () => {
+  if (nameInput.value.trim() !== "") {
+    submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
+  }
+});
 
-  document.getElementById('jkData').innerHTML = jk;
-  document.getElementById('errorJk').innerHTML = "";
+function validateForm() {
+  let name = document.forms["form-section"]["name"].value;
+  let birthDate = document.forms["form-section"]["dob"].value;
+  let gender = document.forms["form-section"]["gender"].value;
+  let messages = document.forms["form-section"]["message"].value;
+  let timeNow = new Date();
+  let messageReturn = document.getElementById("returnText");
+  if (messageReturn.classList == "returnText") {
+    messageReturn.classList.toggle("returnText");
+  }
 
-  document.getElementById('pesanData').innerHTML = pesan;
-  document.getElementById('errorPesan').innerHTML = "";
+  document.getElementById("time-api").innerHTML = timeNow;
+  document.getElementById("sender-name").innerHTML = name;
+  document.getElementById("sender-dob").innerHTML = birthDate;
+  document.getElementById("sender-gender").innerHTML = gender;
+  document.getElementById("sender-message").innerHTML = messages;
+  return false;
 }
